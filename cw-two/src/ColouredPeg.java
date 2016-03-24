@@ -13,4 +13,12 @@ public class ColouredPeg {
         return this.colour;
     }
 
+    public void setChecked(Boolean checker) {
+        this.checked = checker;
+    }
+
+    public Boolean getChecked() {
+        return this.checked;
+    }
+
 }

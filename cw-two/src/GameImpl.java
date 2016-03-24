@@ -23,9 +23,9 @@ public class GameImpl extends GameAbstractImpl {
             x.printGen(randomPegs);
             MyUserInput z = new MyUserInput();
             ColouredPeg[] myPegArray = new ColouredPeg[4];
+            String testLine = z.userInput().toUpperCase();
             for (int i = 0; i < 4; i++) {
-                String testLine = z.userInput();
-                ColouredPeg aPeg = z.pegMaker(testLine);
+                ColouredPeg aPeg = z.pegMaker(testLine.substring(i,i+1));
                 myPegArray[i] = aPeg;
                 //System.out.println("You have entered: " + myPegArray[i].getColour());
             }
@@ -42,7 +42,8 @@ public class GameImpl extends GameAbstractImpl {
             for (int i = 0; i < 4; i++) {
                 if (myPegArray[i].getChecked() == false) {
                     for (int j = 0; j < 4; j++) {
-                        if (randomPegs[j].getChecked() == false && myPegArray[i].getColour() == randomPegs[j].getColour()) {
+                        if (randomPegs[j].getChecked() == false && myPegArray[i].getColour() == randomPegs[j].getColour()
+                                && myPegArray[i].getChecked() == false) {
                             whitePegNum++;
                             myPegArray[i].setChecked(true);
                             randomPegs[j].setChecked(true);

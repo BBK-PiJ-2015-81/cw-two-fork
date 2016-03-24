@@ -4,28 +4,33 @@
 import java.util.Scanner;
 public class MyUserInput {
     public String userInput() {
-        System.out.println("Please enter the first peg:");
+        System.out.println("Please enter a peg:");
         Scanner myScan = new Scanner(System.in);
         String myString = myScan.next();
         return myString;
     }
 
-    public PegColour pegConverter(String myInput) {
+    public ColouredPeg pegMaker(String myInput) {
         switch(myInput) {
             case "B":
-                return PegColour.B;
+                return new ColouredPeg(PegColour.B);
             case "G":
-                return PegColour.G;
+                return new ColouredPeg(PegColour.G);
             case "O":
-                return PegColour.O;
+                return new ColouredPeg(PegColour.O);
             case "P":
-                return PegColour.P;
+               return new ColouredPeg(PegColour.P);
             case "R":
-                return PegColour.R;
+                return new ColouredPeg(PegColour.R);
             case "Y":
-                return PegColour.Y;
+                return new ColouredPeg(PegColour.Y);
             default:
                 return null;
         }
     }
+
+   /* public ColouredPeg[] userArraybuilder(ColouredPeg First, ColouredPeg Second, ColouredPeg Third, ColouredPeg Fourth) {
+        ColouredPeg[] myPegArray = {First, Second, Third, Fourth};
+        return myPegArray;
+   }*/
 }

@@ -15,19 +15,19 @@ public class GameImpl extends GameAbstractImpl {
         int blackPegNum = 0;
         int whitePegNum = 0;
         int guessesLeft = 12;
+        RandomCodeGen x = new RandomCodeGen();
+        ColouredPeg[] randomPegs = x.getCode(tooEasy);
 
         while (guessesLeft > 0) {
 
-            RandomCodeGen x = new RandomCodeGen();
-            ColouredPeg[] randomPegs = x.getCode(tooEasy);
-            //PegColour[] myPeg = new PegColour[1];
+            x.printGen(randomPegs);
             MyUserInput z = new MyUserInput();
             ColouredPeg[] myPegArray = new ColouredPeg[4];
             for (int i = 0; i < 4; i++) {
                 String testLine = z.userInput();
                 ColouredPeg aPeg = z.pegMaker(testLine);
                 myPegArray[i] = aPeg;
-                System.out.println("You have entered: " + myPegArray[i].getColour());
+                //System.out.println("You have entered: " + myPegArray[i].getColour());
             }
             //System.out.println(myPegArray[0].getColour());
 

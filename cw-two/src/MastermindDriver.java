@@ -2,10 +2,14 @@ public class MastermindDriver {
 
     // Example - change as you need to...
     public static void main(String[] args) {
-        Game g = Factory.getInstance(Game.class, true);
-        g.runGames();
+        Difficulty setLevel = new Difficulty();
+        Boolean setMode = setLevel.mode();
 
-        g = Factory.getInstance(Game.class, false);
+
+        //Game g = Factory.getInstance(Game.class, true);
+        //g.runGames();
+
+       Game g = Factory.getInstance(Game.class, setMode);
         g.runGames();
     }
 }

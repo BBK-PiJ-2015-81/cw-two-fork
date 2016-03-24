@@ -4,7 +4,7 @@
 import java.util.Arrays;
 public class RandomCodeGen {
 
-        public ColouredPeg[] getCode(Boolean easy) {
+        public ColouredPeg[] getCode() {
 
 
             /*ColouredPeg Y = new ColouredPeg(PegColour.Y);

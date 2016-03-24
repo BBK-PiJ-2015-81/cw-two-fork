@@ -12,21 +12,59 @@ public class GameImpl extends GameAbstractImpl {
 
     public void runGames() {
 
+        Boolean tryAgain = false;
         int blackPegNum = 0;
         int whitePegNum = 0;
         int guessesLeft = 12;
         RandomCodeGen x = new RandomCodeGen();
-        ColouredPeg[] randomPegs = x.getCode(tooEasy);
+        ColouredPeg[] randomPegs = x.getCode();
 
         while (guessesLeft > 0) {
+            Boolean errorChecked = false;
+            if (tooEasy) {
+                x.printGen(randomPegs);
+            }
 
-            x.printGen(randomPegs);
-            MyUserInput z = new MyUserInput();
             ColouredPeg[] myPegArray = new ColouredPeg[4];
-            String testLine = z.userInput().toUpperCase();
+            //MyUserInput z = new MyUserInput();
+            //String testLine = z.userInput().toUpperCase();
+
+            MyUserInput z;
+            String testLine;
+
+            do {
+                errorChecked = true;
+                z = new MyUserInput();
+                testLine = z.userInput().toUpperCase();
+
+                if (testLine.length() != 4) {
+                    errorChecked = false;
+                } else {
+
+
+                    for (int i = 0; i < 4; i++) {
+                        ColouredPeg aPeg = z.pegMaker(testLine.substring(i, i + 1));
+                        if (aPeg == null) {
+                            System.out.println("Invalid character '" + testLine.substring(i, i + 1) +"' . Please re-enter.");
+                            errorChecked = false;
+                            //z = new MyUserInput();
+                            //testLine = z.userInput().toUpperCase();
+
+                        }
+                    }
+                }
+
+            }while (!errorChecked);
+
+
+
+
+
+
             for (int i = 0; i < 4; i++) {
                 ColouredPeg aPeg = z.pegMaker(testLine.substring(i,i+1));
                 myPegArray[i] = aPeg;
+
                 //System.out.println("You have entered: " + myPegArray[i].getColour());
             }
             //System.out.println(myPegArray[0].getColour());

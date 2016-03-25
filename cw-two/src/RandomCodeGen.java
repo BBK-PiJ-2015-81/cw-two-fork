@@ -1,7 +1,7 @@
 /**
  * Created by Tom on 22/03/2016.
  */
-import java.util.Arrays;
+
 public class RandomCodeGen {
 
         public ColouredPeg[] getCode() {

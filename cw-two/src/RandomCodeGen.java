@@ -5,35 +5,12 @@ import java.util.Arrays;
 public class RandomCodeGen {
 
         public ColouredPeg[] getCode() {
-
-
-            /*ColouredPeg Y = new ColouredPeg(PegColour.Y);
-            ColouredPeg R = new ColouredPeg(PegColour.R);
-            ColouredPeg B = new ColouredPeg(PegColour.B);
-            ColouredPeg Y2 = new ColouredPeg(PegColour.Y);
-            ColouredPeg[] myCode = {Y, R, B, Y2};
-
-            if (easy) {
-                System.out.println(myCode[0].getColour());
-                System.out.println(myCode[1].getColour());
-                System.out.println(myCode[2].getColour());
-                System.out.println(myCode[3].getColour());
-            }*/
-
-
-
             ColouredPeg Y = new ColouredPeg(PegColour.randomPegColour());
             ColouredPeg R = new ColouredPeg(PegColour.randomPegColour());
             ColouredPeg B = new ColouredPeg(PegColour.randomPegColour());
             ColouredPeg Y2 = new ColouredPeg(PegColour.randomPegColour());
             ColouredPeg[] myCode = {Y, R, B, Y2};
-
-
-
-
-
             return myCode;
-
         }
 
         public void printGen(ColouredPeg[] myCode) {

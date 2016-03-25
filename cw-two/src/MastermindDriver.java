@@ -5,10 +5,6 @@ public class MastermindDriver {
         Difficulty setLevel = new Difficulty();
         Boolean setMode = setLevel.mode();
 
-
-        //Game g = Factory.getInstance(Game.class, true);
-        //g.runGames();
-
        Game g = Factory.getInstance(Game.class, setMode);
         g.runGames();
     }

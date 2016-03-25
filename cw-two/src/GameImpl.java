@@ -12,62 +12,25 @@ public class GameImpl extends GameAbstractImpl {
 
     public void runGames() {
 
-        Boolean tryAgain = false;
         int blackPegNum = 0;
         int whitePegNum = 0;
         int guessesLeft = 12;
-        RandomCodeGen x = new RandomCodeGen();
-        ColouredPeg[] randomPegs = x.getCode();
+        RandomCodeGen secretCode = new RandomCodeGen();
+        ColouredPeg[] randomPegs = secretCode.getCode();
 
         while (guessesLeft > 0) {
             Boolean errorChecked = false;
             if (tooEasy) {
-                x.printGen(randomPegs);
+                secretCode.printGen(randomPegs);
             }
 
-            ColouredPeg[] myPegArray = new ColouredPeg[4];
-            //MyUserInput z = new MyUserInput();
-            //String testLine = z.userInput().toUpperCase();
+            ErrorChecker myChecker = new ErrorChecker();
 
-            MyUserInput z;
-            String testLine;
-
-            do {
-                errorChecked = true;
-                z = new MyUserInput();
-                testLine = z.userInput().toUpperCase();
-
-                if (testLine.length() != 4) {
-                    errorChecked = false;
-                } else {
+            ColouredPeg[] myPegArray = myChecker.checkedPegArray();
 
 
-                    for (int i = 0; i < 4; i++) {
-                        ColouredPeg aPeg = z.pegMaker(testLine.substring(i, i + 1));
-                        if (aPeg == null) {
-                            System.out.println("Invalid character '" + testLine.substring(i, i + 1) +"' . Please re-enter.");
-                            errorChecked = false;
-                            //z = new MyUserInput();
-                            //testLine = z.userInput().toUpperCase();
-
-                        }
-                    }
-                }
-
-            }while (!errorChecked);
-
-
-
-
-
-
-            for (int i = 0; i < 4; i++) {
-                ColouredPeg aPeg = z.pegMaker(testLine.substring(i,i+1));
-                myPegArray[i] = aPeg;
-
-                //System.out.println("You have entered: " + myPegArray[i].getColour());
-            }
-            //System.out.println(myPegArray[0].getColour());
+            //Compares user pegs with randomly generated pegs.
+            //Calculates black and white feedback pegs.
 
             for (int i = 0; i < 4; i++) {
                 if (myPegArray[i].getColour() == randomPegs[i].getColour()) {
@@ -89,6 +52,8 @@ public class GameImpl extends GameAbstractImpl {
                     }
                 }
             }
+
+            //Output of results.
 
             if (blackPegNum == 4) {
                 System.out.println("You have won the game!");

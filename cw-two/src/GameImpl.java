@@ -11,7 +11,7 @@ public class GameImpl extends GameAbstractImpl {
     }
 
     public void runGames() {
-
+        int pegNumber = 4;
         int blackPegNum = 0;
         int whitePegNum = 0;
         int guessesLeft = 12;
@@ -19,7 +19,6 @@ public class GameImpl extends GameAbstractImpl {
         ColouredPeg[] randomPegs = secretCode.getCode();
 
         while (guessesLeft > 0) {
-            Boolean errorChecked = false;
             if (tooEasy) {
                 secretCode.printGen(randomPegs);
             }
@@ -32,7 +31,7 @@ public class GameImpl extends GameAbstractImpl {
             //Compares user pegs with randomly generated pegs.
             //Calculates black and white feedback pegs.
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < pegNumber; i++) {
                 if (myPegArray[i].getColour() == randomPegs[i].getColour()) {
                     blackPegNum++;
                     myPegArray[i].setChecked(true);
@@ -40,9 +39,9 @@ public class GameImpl extends GameAbstractImpl {
                 }
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < pegNumber; i++) {
                 if (myPegArray[i].getChecked() == false) {
-                    for (int j = 0; j < 4; j++) {
+                    for (int j = 0; j < pegNumber; j++) {
                         if (randomPegs[j].getChecked() == false && myPegArray[i].getColour() == randomPegs[j].getColour()
                                 && myPegArray[i].getChecked() == false) {
                             whitePegNum++;
@@ -55,7 +54,7 @@ public class GameImpl extends GameAbstractImpl {
 
             //Output of results.
                 Results playerResult = new Results();
-                Boolean winLose = playerResult.getResults(blackPegNum, whitePegNum, guessesLeft - 1);
+                Boolean winLose = playerResult.getResults(pegNumber, blackPegNum, whitePegNum, guessesLeft - 1);
 
             if (winLose) {
                 break;
@@ -65,7 +64,7 @@ public class GameImpl extends GameAbstractImpl {
                 blackPegNum = 0;
                 whitePegNum = 0;
 
-                for (int i = 0; i < 4; i++) {
+                for (int i = 0; i < pegNumber; i++) {
                     myPegArray[i].setChecked(false);
                     randomPegs[i].setChecked(false);
                 }

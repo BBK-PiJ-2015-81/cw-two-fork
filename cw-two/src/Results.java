@@ -3,8 +3,8 @@
  */
 public class Results {
 
-    public Boolean getResults(int blackPegNum, int whitePegNum, int guessesLeft) {
-        if (blackPegNum == 4) {
+    public Boolean getResults(int pegNumber, int blackPegNum, int whitePegNum, int guessesLeft) {
+        if (blackPegNum == pegNumber) {
             System.out.println("You have won the game!");
             return true;
         } else {

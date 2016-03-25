@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SDP_Portfolio.iml" filepath="$PROJECT_DIR$/SDP_Portfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cw-two/cw-two.iml" filepath="$PROJECT_DIR$/cw-two/cw-two.iml" />
     </modules>
   </component>
 </project>

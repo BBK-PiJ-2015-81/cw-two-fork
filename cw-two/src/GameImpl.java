@@ -54,19 +54,14 @@ public class GameImpl extends GameAbstractImpl {
             }
 
             //Output of results.
+                Results playerResult = new Results();
+                Boolean winLose = playerResult.getResults(blackPegNum, whitePegNum, guessesLeft - 1);
 
-            if (blackPegNum == 4) {
-                System.out.println("You have won the game!");
+            if (winLose) {
                 break;
             } else {
-
-                System.out.println("There are " + blackPegNum + " black pegs.");
-                System.out.println("There are " + whitePegNum + " white pegs.");
-                guessesLeft --;
-                System.out.println("You have " + guessesLeft + " guesses remaining.");
-
                 // Reset feedback pegs
-
+                guessesLeft --;
                 blackPegNum = 0;
                 whitePegNum = 0;
 
@@ -75,7 +70,6 @@ public class GameImpl extends GameAbstractImpl {
                     randomPegs[i].setChecked(false);
                 }
             }
-
         }
         System.out.println("GAME OVER");
     }

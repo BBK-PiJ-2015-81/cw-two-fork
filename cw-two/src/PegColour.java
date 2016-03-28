@@ -6,7 +6,7 @@
 import java.util.Arrays;
 import java.util.Random;
 import java.util.List;
-
+//defines colours. Feel free to add!
 public enum PegColour {
     //Blue
     B,
@@ -19,10 +19,10 @@ public enum PegColour {
     //Red
     R,
     //Yellow
-    Y
+    Y;
     //Turquoise
-    //T
-    ;
+    //T;
+
 
     private static List<PegColour> VALUES = Arrays.asList(values());
     private static int SIZE = VALUES.size();

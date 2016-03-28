@@ -21,6 +21,14 @@ public class RandomCodeGen {
             System.out.println(myCode[3].getColour());
         }
 
+        public void printLost(ColouredPeg[] myCode) {
+            System.out.print("The secret code was: ");
+            System.out.print(myCode[0].getColour());
+            System.out.print(myCode[1].getColour());
+            System.out.print(myCode[2].getColour());
+            System.out.println(myCode[3].getColour());
+        }
+
 
     }
 

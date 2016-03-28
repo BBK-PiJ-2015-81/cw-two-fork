@@ -15,7 +15,7 @@ public class GameImpl  extends GameAbstractImpl {
     }
 
     public void runGames() {
-
+        //Defines number of pegs and guesses. Feel free to edit!
         int pegNumber = 4;
         int blackPegNum = 0;
         int whitePegNum = 0;
@@ -76,6 +76,9 @@ public class GameImpl  extends GameAbstractImpl {
             }
         }
         System.out.println("GAME OVER");
+        if (guessesLeft == 0) {
+            secretCode.printLost(randomPegs);
+        }
     }
 }
 

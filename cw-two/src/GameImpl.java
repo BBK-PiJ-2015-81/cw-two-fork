@@ -1,16 +1,17 @@
 /**
  * Created by Tom on 22/03/2016.
  */
-public class GameImpl extends GameAbstractImpl {
+public class GameImpl  {//implements Game {
 
-    private Boolean tooEasy;
+    private boolean tooEasy;
 
-    public GameImpl(Boolean easy) {
-        super(easy);
+    public GameImpl(boolean easy) {
+        //super(easy);
         this.tooEasy = easy;
     }
 
     public void runGames() {
+        boolean tooEasy = true;
         int pegNumber = 4;
         int blackPegNum = 0;
         int whitePegNum = 0;

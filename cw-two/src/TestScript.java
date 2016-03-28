@@ -2,7 +2,7 @@
  * Created by Tom on 22/03/2016.
  */
 
-public class TestScript {
+/*public class TestScript {
 
 
     public static void main(String[] args) {
@@ -12,9 +12,9 @@ public class TestScript {
 
 
 
-        Game launcher = new GameImpl(setMode);
+        GameImpl launcher = new GameImpl();
 
         launcher.runGames();
 
     }
-}
+}*/

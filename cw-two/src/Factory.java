@@ -1,9 +1,9 @@
-public class Factory {
+/*public class Factory {
 
-    public static Game getInstance(Class c, Boolean b) {
+    public static GameImpl getInstance(Class c, Boolean b) {
 
-        Game newGame = new GameImpl(b);
+        GameImpl newGame = new GameImpl();
 
         return newGame;
     }
-}
+}*/

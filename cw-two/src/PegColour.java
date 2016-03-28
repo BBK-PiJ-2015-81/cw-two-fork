@@ -19,7 +19,10 @@ public enum PegColour {
     //Red
     R,
     //Yellow
-    Y;
+    Y
+    //Turquoise
+    //T
+    ;
 
     private static List<PegColour> VALUES = Arrays.asList(values());
     private static int SIZE = VALUES.size();

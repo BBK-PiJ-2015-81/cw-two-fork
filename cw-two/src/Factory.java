@@ -1,9 +1,20 @@
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
 public class Factory {
 
-    public static Game getInstance(Class c, Boolean b) {
+    public static Game getInstance(Boolean b) {
 
-        Game newGame = new GameImpl(b);
+        if (b) {
+            BeanFactory beanFact = new FileSystemXmlApplicationContext("/cw-two/src/easyBean.xml");
+            Game g = (GameImpl) beanFact.getBean("easyBean");
+            return g;
 
-        return newGame;
+        } else {
+            BeanFactory beanFact = new FileSystemXmlApplicationContext("/cw-two/src/hardBean.xml");
+            Game g = (GameImpl) beanFact.getBean("hardBean");
+            return g;
+        }
+
     }
 }

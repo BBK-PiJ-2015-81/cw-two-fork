@@ -11,18 +11,14 @@ public class MastermindDriver {
     public static void main(String[] args) {
 
         // Spring Bean Container, get beans here
-        BeanFactory factory = new FileSystemXmlApplicationContext("/cw-two/src/gameBean.xml");
+        BeanFactory diffFact = new FileSystemXmlApplicationContext("/cw-two/src/diffBean.xml");
 
-        Difficulty d = (Difficulty) factory.getBean("difficulty");
+        Difficulty d = (Difficulty) diffFact.getBean("difficulty");
         Boolean setMode = d.mode();
 
-        // Call method from bean
-        if (setMode) {
-            Game g = (GameImpl) factory.getBean("easyBean");
-            g.runGames();
-        } else {
-            Game g = (GameImpl) factory.getBean("hardBean");
-            g.runGames();
-        }
+        Factory beanFactory = new Factory();
+        beanFactory.getInstance(setMode).runGames();
+
+
     }
 }

@@ -3,15 +3,19 @@
  */
 public class GameImpl  extends GameAbstractImpl {
 
-    private boolean tooEasy;
+    //private boolean tooEasy;
 
     public GameImpl(boolean easy) {
+        //System.out.println("The value of easy is: " + easy);
         super(easy);
-        this.tooEasy = easy;
+        //System.out.println("The value of easy is: " + easy);
+        //this.tooEasy = easy;
+        //this.tooEasy = true;
+        //System.out.println("The value of easy is: " + super.showCode);
     }
 
     public void runGames() {
-        //boolean tooEasy = true;
+
         int pegNumber = 4;
         int blackPegNum = 0;
         int whitePegNum = 0;
@@ -20,7 +24,7 @@ public class GameImpl  extends GameAbstractImpl {
         ColouredPeg[] randomPegs = secretCode.getCode();
 
         while (guessesLeft > 0) {
-            if (tooEasy) {
+            if (super.showCode) {
                 secretCode.printGen(randomPegs);
             }
 

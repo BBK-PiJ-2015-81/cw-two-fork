@@ -25,7 +25,7 @@ public class GameImpl extends GameAbstractImpl {
 
             ErrorChecker myChecker = new ErrorChecker();
 
-            ColouredPeg[] myPegArray = myChecker.checkedPegArray();
+            ColouredPeg[] myPegArray = myChecker.checkedPegArray(pegNumber);
 
 
             //Compares user pegs with randomly generated pegs.

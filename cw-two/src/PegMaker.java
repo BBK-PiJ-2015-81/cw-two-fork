@@ -4,10 +4,14 @@
 public class PegMaker {
 
     public ColouredPeg makePeg(String myInput) {
-        switch (myInput) {
-            case "B":
-                return new ColouredPeg(PegColour.B);
-            case "G":
+        //switch (myInput) {
+            //case "B":
+        try {
+            return new ColouredPeg(PegColour.valueOf(myInput));
+        } catch(IllegalArgumentException E) {
+            return null;
+        }
+            /*case "G":
                 return new ColouredPeg(PegColour.G);
             case "O":
                 return new ColouredPeg(PegColour.O);
@@ -19,7 +23,8 @@ public class PegMaker {
                 return new ColouredPeg(PegColour.Y);
             default:
                 return null;
-        }
+        }*/
+
     }
 
 }

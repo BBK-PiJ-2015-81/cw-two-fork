@@ -7,5 +7,10 @@
         <constructor-arg index="0" type="boolean" value="true"/>
     </bean>
 
+    <bean id="hardBean" class="GameImpl">
+        <constructor-arg index="0" type="boolean" value="false"/>
+    </bean>
+
+    <bean id="difficulty" class="Difficulty"/>
 
 </beans>

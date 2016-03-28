@@ -6,18 +6,23 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class MastermindDriver {
 
+
     // Example - change as you need to...
     public static void main(String[] args) {
+
         // Spring Bean Container, get beans here
         BeanFactory factory = new FileSystemXmlApplicationContext("/cw-two/src/gameBean.xml");
 
-// Call method from bean
-        GameImpl g = (GameImpl)factory.getBean("easyBean");
-        g.runGames();
-        /*Difficulty setLevel = new Difficulty();
-        Boolean setMode = setLevel.mode();
+        Difficulty d = (Difficulty) factory.getBean("difficulty");
+        Boolean setMode = d.mode();
 
-       Game g = Factory.getInstance(Game.class, setMode);
-        g.runGames();*/
+        // Call method from bean
+        if (setMode) {
+            Game g = (GameImpl) factory.getBean("easyBean");
+            g.runGames();
+        } else {
+            Game g = (GameImpl) factory.getBean("hardBean");
+            g.runGames();
+        }
     }
 }

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Alternative.iml" filepath="$PROJECT_DIR$/Alternative.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ray Tracer.iml" filepath="$PROJECT_DIR$/Ray Tracer.iml" />
       <module fileurl="file://$PROJECT_DIR$/SDP_Portfolio.iml" filepath="$PROJECT_DIR$/SDP_Portfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cw-one/cw-one.iml" filepath="$PROJECT_DIR$/cw-one/cw-one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cw-three.iml" filepath="$PROJECT_DIR$/cw-three.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdp_portfolio.iml" filepath="$PROJECT_DIR$/.idea/modules/sdp_portfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sdp_portfolio-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sdp_portfolio-build.iml" />
     </modules>
   </component>
 </project>
